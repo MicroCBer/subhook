@@ -21,6 +21,9 @@ subhook_add_option_var(SUBHOOK_TESTS BOOL ON "Enable tests")
 subhook_add_option_var(SUBHOOK_FORCE_32BIT
   BOOL OFF "Configure for compiling 32-bit binaries (on 64-bit systems)")
 
+set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall --std=c++11 -O3 -fPIC" )
+set( CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wall -O3 -fPIC" )
+
 set(SUBHOOK_HEADERS subhook.h)
 set(SUBHOOK_SOURCES subhook.c subhook_private.h subhook_x86.c)
 if(WIN32)
